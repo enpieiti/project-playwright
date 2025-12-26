@@ -1,0 +1,32 @@
+{
+  "content_type": "application/json; charset=utf-8",
+  "booking_id": "1",
+  "booking_id2": "2",
+  "booking_id3": "4",
+  "firstname": "Sally",
+  "create_booking": {
+    "firstname": "Sally",
+    "lastname": "Wilson",
+    "totalprice": 822,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2017-01-01",
+      "checkout": "2024-11-25"
+    },
+    "additionalneeds": "Breakfast"
+  },
+  "update_booking": {
+    "firstname": "Mary update",
+    "lastname": "Smith",
+    "totalprice": 553,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2017-07-11",
+      "checkout": "2021-07-14"
+    }
+  },
+  "upadate_partial_booking": {
+    "firstname": "Mary update",
+    "lastname": "Smith update"
+  }
+}
