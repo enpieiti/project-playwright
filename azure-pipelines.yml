@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool: 
-  vmImage: ubuntu-latest #windows #macos-latest
+  name: 'Default'
 
 steps:
 - task: NodeTool@0
