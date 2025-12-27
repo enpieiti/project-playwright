@@ -23,4 +23,6 @@ steps:
 
 - script: SECRET_KEY=bupapabu npm run test_demo
   displayName: 'Run Tests'
+  env:
+    SECRET_KEY: 'bupapabu'
 
