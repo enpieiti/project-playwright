@@ -10,17 +10,17 @@ pool:
   vmImage: ubuntu-latest #windows #macos-latest
 
 steps:
-  - 
 - task: NodeTool@0
   inputs:
     versionSource: 'spec'
     versionSpec: '23.x'
 
 - script: npm ci
-  displayName: 'Install Playwright Dependencies'
+  displayName: 'Install Playwright Dependencies'
 
-- script: npx Playwright install-with-deps
-  displayNam: 'Install Playwight Browsers'
+- script: npx playwright install --with-deps
+  displayName: 'Install Playwright Browsers'
 
--script: SECRET_KEY=bupapabu npm run test_demo
+- script: SECRET_KEY=bupapabu npm run test_demo
   displayName: 'Run Tests'
+
