@@ -6,21 +6,21 @@
 trigger:
 - main
 
-pool: 
-  vmImage: ubuntu-latest #windows-latest #macos-latest
+pool: 
+  vmImage: ubuntu-latest #windows #macos-latest
 
 steps:
+  - 
 - task: NodeTool@0
   inputs:
     versionSource: 'spec'
-    versionSpec: '22.x'
+    versionSpec: '23.x'
 
-- script: npm ci
-  displayName: 'Install Playwright Dependencies'
+- script: npm ci
+  displayName: 'Install Playwright Dependencies'
 
-- script: npx playwright install --with-deps
-  displayName: 'Install Playwright Browsers'
+- script: npx Playwright install-with-deps
+  displayNam: 'Install Playwight Browsers'
 
-- script: SECRET_KEY=bupapabu npm run test_demo
-  displayName: 'Run Tests'
-
+-script: SECRET_KEY=bupapabu npm run test_demo
+  displayName: 'Run Tests'
