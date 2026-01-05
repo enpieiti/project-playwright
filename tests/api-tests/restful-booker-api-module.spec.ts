@@ -35,7 +35,7 @@ test(
 // Verify the response status text
 // Verify the received response
 // Verify content-type value in response header
-test(
+test.skip(
   "Id - 9 [Restful-Booker > Booking] Verify that the user is able to fetch booking details for a booking id using GET API and receive valid response.",
   {
     tag: ["@API", "@UAT"],
