@@ -11,6 +11,8 @@ import restfulApiData from "../../data/api-data/restful-booker-api-module-data.j
 //   console.log(await bookingDetails.json());
 // });
 
+// let userid;
+let userid: number;
 test(
   "Id - 8 [Restful-Booker > Booking] Verify that the user is able to fetch all the booking IDs using GET API and receive valid response.",
   {
@@ -69,6 +71,7 @@ test(
     const createBookingRest = await request.post(apiPathData.booking_path, { data: restfulApiData.create_booking });
     const createBookingJsonResp = await createBookingRest.json();
     console.log(createBookingJsonResp);
+    userid = createBookingJsonResp.bookingid;
     expect(createBookingRest.status()).toBe(200);
     expect(createBookingJsonResp.booking).toMatchObject(restfulApiData.create_booking);
   }
@@ -134,7 +137,7 @@ test(
   },
   async ({ request, commonApiUtils }) => {
     const apiToken = await commonApiUtils.createToken();
-    const deleteBookingResp = await request.delete(`${apiPathData.booking_path}/${restfulApiData.booking_id3}`, {
+    const deleteBookingResp = await request.delete(`${apiPathData.booking_path}/${userid}`, {
       headers: {
         Cookies: `token=${apiToken}`,
       },
@@ -142,7 +145,7 @@ test(
     expect(deleteBookingResp.status()).toBe(201);
     expect(deleteBookingResp.statusText()).toBe("Created");
 
-    const getBookingResp = await request.get(`${apiPathData.booking_path}/${restfulApiData.booking_id3}`);
+    const getBookingResp = await request.get(`${apiPathData.booking_path}/${userid}`);
     expect(getBookingResp.status()).toBe(404);
     expect(getBookingResp.statusText()).toBe("Not Found");
   }
