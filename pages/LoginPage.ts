@@ -18,7 +18,9 @@ export class LoginPage {
   // To open URL into browser
   async gotoOrangeHrm() {
     // await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`);
+    await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`, {
+      timeout: 60000,
+    });
   }
 
   // To login into browser application

@@ -36,6 +36,8 @@ export default defineConfig({
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
+    navigationTimeout: 30000, // Thời gian chờ load trang tối đa 30s
+    actionTimeout: 15000, // Mỗi hành động click/fill chờ tối đa 15s
   },
 
   /* Configure projects for major browsers */
