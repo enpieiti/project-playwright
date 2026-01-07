@@ -38,6 +38,7 @@ export default defineConfig({
     video: "retain-on-failure",
     navigationTimeout: 30000, // Thời gian chờ load trang tối đa 30s
     actionTimeout: 15000, // Mỗi hành động click/fill chờ tối đa 15s
+    baseURL: process.env.BASE_URL,
   },
 
   /* Configure projects for major browsers */
