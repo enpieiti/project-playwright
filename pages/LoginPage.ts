@@ -9,12 +9,16 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.userNameInput = page.getByRole("textbox", { name: "Username" });
-    this.passwordInput = page.getByRole("textbox", { name: "Password" });
-    this.loginButton = page.getByRole("button", { name: "Login" });
+    // this.userNameInput = page.getByRole("textbox", { name: "Username" });
+    this.userNameInput = page.locator('input[name="username"]');
+    // this.passwordInput = page.getByRole("textbox", { name: "Password" });
+    this.passwordInput = page.locator('input[name="password"]');
+    // this.loginButton = page.getByRole("button", { name: "Login" });
+    this.loginButton = page.locator("button.orangehrm-login-button");
     this.invalidCredentialsErrorPopup = page.getByRole("alert");
   }
 
+  
   // To open URL into browser
   async gotoOrangeHrm() {
     // await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
