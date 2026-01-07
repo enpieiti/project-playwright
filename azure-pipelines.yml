@@ -22,7 +22,7 @@ steps:
   displayName: 'Install Playwright Browsers'
 
 - script: |
-    set SECRET_KEY=bupapabu
+    set SECRET_KEY=${SECRET_KEY_VAL}
     npm run test_demo
   displayName: 'Run Tests'
 
