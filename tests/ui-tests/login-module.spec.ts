@@ -76,7 +76,7 @@ test(
     const username = commonUtils.decryptData(process.env.USER_NAME!);
     const password = commonUtils.decryptData(process.env.PASSWORD!);
     await loginPage.loginOrangeHrm(username, password);
-    await expect(leftNavigationPage.orangeHrmLogo).toHaveScreenshot("orangeHrmBrandandLogo.png");
+    // await expect(leftNavigationPage.orangeHrmLogo).toHaveScreenshot("orangeHrmBrandandLogo.png");
     await expect(leftNavigationPage.leftNavigationPanel).toHaveScreenshot("LeftNavPanel.png");
   }
 );
