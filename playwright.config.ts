@@ -48,20 +48,35 @@ export default defineConfig({
     },
     {
       name: "chromium",
+      testDir: "./tests/ui-tests",
       dependencies: ["Setup"],
-      use: { ...devices["Desktop Chrome"], storageState: "./playwright/.auth/auth.json" },
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.BASE_URL,
+        storageState: "./playwright/.auth/auth.json",
+      },
     },
 
     {
       name: "firefox",
+      testDir: "./tests/ui-tests",
       dependencies: ["Setup"],
-      use: { ...devices["Desktop Firefox"], storageState: "./playwright/.auth/auth.json" },
+      use: {
+        ...devices["Desktop Firefox"],
+        baseURL: process.env.BASE_URL,
+        storageState: "./playwright/.auth/auth.json",
+      },
     },
 
     {
       name: "webkit",
+      testDir: "./tests/ui-tests",
       dependencies: ["Setup"],
-      use: { ...devices["Desktop Safari"], storageState: "./playwright/.auth/auth.json" },
+      use: {
+        ...devices["Desktop Safari"],
+        baseURL: process.env.BASE_URL,
+        storageState: "./playwright/.auth/auth.json",
+      },
     },
     {
       name: "apiTest",

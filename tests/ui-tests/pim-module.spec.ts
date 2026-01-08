@@ -20,7 +20,12 @@ test(
       await leftNavigationPage.openPimModule();
     });
     await test.step("Add employee in PIM Module", async () => {
-      await pimPage.addEmployee(pimData.first_name, pimData.middle_name, pimData.last_name);
+      await pimPage.addEmployee(
+        pimData.first_name,
+        pimData.middle_name,
+        pimData.last_name,
+        pimData.emplayee_id + Math.floor(Math.random() * 10000)
+      );
       await expect(pimPage.newEmployeeNameHeading).toHaveText(`${pimData.first_name} ${pimData.last_name}`);
     });
   }
