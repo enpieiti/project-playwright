@@ -9,6 +9,16 @@ trigger:
 pool: 
   name: 'Default'
 
+parameters:
+  - name: SCRIPRT_KEY_VAL2
+    displayName: 'Select Script Key'
+    type: string
+    default: 'test_demo_ui_cr_hl_api_novisual'
+    values: 
+      - test_demo_ui_cr_hl_api_novisual
+      - test_demo
+      - test_demo_cr_hl
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -22,8 +32,7 @@ steps:
   displayName: 'Install Playwright Browsers'
 
 - script: | 
-           set SECRET_KEY=$(SECRET_KEY_VAL)
-           npm run $(SCRIPT_KEY_VAL)
+   set SECRET_KEY=$(SECRET_KEY_VAL) npm run ${{parameters.SCRIPRT_KEY_VAL2}}
   displayName: 'Run Tests'
 
 
