@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -36,4 +37,16 @@ steps:
     call npm run ${{ parameters.SCRIPRT_KEY_VAL2 }}
   displayName: 'Run Tests'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'playwright-report'
+    ArtifactName: 'Playwright HTML Report'
+    publishLocation: 'Container'
+  condition: always()
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**test-results/junit-report.xml'
+    testRunTitle: 'Playwright Junit Report'
+  condition: always()
