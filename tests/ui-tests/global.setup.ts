@@ -6,8 +6,9 @@ test("Global setup for auto login", async ({ page, commonUtils, loginPage, dashb
   const decryptedPassword = commonUtils.decryptData(process.env.PASSWORD!);
   await loginPage.gotoOrangeHrm();
   await loginPage.loginOrangeHrm(decryptedUserName, decryptedPassword);
-  console.log("daashboard:", `${process.env.BASE_URL}/web/index.php/dashboard/index`);
-  await page.waitForURL(`${process.env.BASE_URL}/web/index.php/dashboard/index`, {
+  // console.log("daashboard:", `${process.env.BASE_URL}/web/index.php/dashboard/index`);
+  const url = `${process.env.BASE_URL}/web/index.php/dashboard/index`;
+  await page.waitForURL(url, {
     timeout: 60000,
   });
 
