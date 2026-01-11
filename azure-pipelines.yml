@@ -19,7 +19,7 @@ pool:
   name: 'Default'
 
 parameters:
-  - name: SCRIPRT_KEY_VAL2
+  - name: SCRIPT_KEY_VAL2
     displayName: 'Select Script Key'
     type: string
     default: 'test_demo_ui_cr_hl_api_novisual'
@@ -42,7 +42,7 @@ steps:
 
 - script: |
     set "SECRET_KEY=$(SECRET_KEY_VAL)"
-    call npm run ${{ parameters.SCRIPRT_KEY_VAL2 }}
+    call npm run ${{ parameters.SCRIPT_KEY_VAL2 }}
   displayName: 'Run Tests'
 
 - task: PublishBuildArtifacts@1
