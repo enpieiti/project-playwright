@@ -7,10 +7,3 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-
-change code ....
-git checkout -b pw-dev
-git pull origin main
-git add .
-git commit -m 'HTML reporter config changes'
-git push origin pw-dev
